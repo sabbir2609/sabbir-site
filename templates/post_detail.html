@@ -1,0 +1,35 @@
+<!-- Content -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card">
+  <h2 class="card-title">
+    {{object.title}}
+  </h2>
+
+    <div>
+        <span class="text-muted">
+            <i class="fa fa-clock-o mr-5" aria-hidden="true"></i> {{object.created_on}}<!-- mr-5 = margin-right: 0.5rem (5px) -->
+        </span>
+    </div>
+    <div>
+        <span class="badge">
+            <i class="fa fa-user-circle text-primary mr-5" aria-hidden="true"></i> {{object.author}} <!-- text-primary = color: primary-color, mr-5 = margin-right: 0.5rem (5px) -->
+        </span>
+        <span class="badge ml-5"> <!-- ml-5 = margin-left: 0.5rem (5px) -->
+            <i class="fa fa-heart text-danger mr-5" aria-hidden="true"></i> 124 likes <!-- text-danger = color: danger-color, mr-5 = margin-right: 0.5rem (5px) -->
+        </span>
+    </div>
+    <hr />
+    <p class="font-size-16">
+        {{object.body}}
+    </p>
+
+    <button class="btn btn-danger" data-toggle="tooltip" data-title="{{object.slug}}" data-placement="right" type="button">
+        Slug
+    </button>
+</div>
+
+{% endblock content %}

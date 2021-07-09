@@ -8,10 +8,10 @@
                 {{ post.title }}
             </h2>
             <p>
-                {{ post.body }}
+                {{ post.body |truncatechars:255 }}
             </p>
             <div class="text-right"> <!-- text-right = text-align: right -->
-                <a href="#" class="btn">Read more</a>
+                <a href="{% url 'post_detail' post.pk %}" class="btn">Read more</a>
             </div>
         </div>
 
